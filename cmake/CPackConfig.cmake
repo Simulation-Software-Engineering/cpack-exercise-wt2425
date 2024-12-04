@@ -37,9 +37,7 @@ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/copyright"
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/changelog.gz"
     DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/doc/${CPACK_PACKAGE_NAME}"
     )
-# fix "lacks-ldconfig-trigger" warning
-set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/postinst;${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/postrm")
-set(CPACK_DEBIAN_PACKAGE_SECTION "libs")
+# fix "lacks-ldconfig-trigger" warning - thanks to precice!
 set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/triggers")
 
 include(CPack)
