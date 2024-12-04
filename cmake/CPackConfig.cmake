@@ -25,7 +25,7 @@ set(CPACK_DEBIAN_PACKAGE_REPLACES "cpackexample")
 
 # add libyaml-cpp
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libyaml-cpp0.8")
-# fix "extended-descruption-is-empty" warning
+# fix "extended-description-is-empty" warning
 set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "SSE cpackexample project using CMake, CPack, deal.II, Boost, and yaml-cpp.")
 # fix "no-phrase" warning
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER ${CPACK_PACKAGE_MAINTAINERS})
