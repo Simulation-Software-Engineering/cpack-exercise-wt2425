@@ -61,3 +61,4 @@ install(TARGETS cpackexamplelib cpackexample
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpackexamplelib
   )
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPackConfig.cmake)
