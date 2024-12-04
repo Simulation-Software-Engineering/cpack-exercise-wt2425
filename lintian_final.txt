@@ -1,0 +1,2 @@
+running with root privileges is not recommended!
+W: cpackexample: no-manual-page [usr/bin/cpackexample]

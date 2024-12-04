@@ -1,0 +1,10 @@
+root@edb832e70f16:/mnt/cpack-exercise/build# lintian cpackexample-0.1.0-Linux.deb
+running with root privileges is not recommended!
+E: cpackexample: extended-description-is-empty
+E: cpackexample: malformed-contact Maintainer Kilian
+E: cpackexample: no-changelog usr/share/doc/cpackexample/changelog.gz (native package)
+E: cpackexample: no-copyright-file
+E: cpackexample: unstripped-binary-or-object [usr/bin/cpackexample]
+W: cpackexample: description-synopsis-starts-with-article
+W: cpackexample: no-manual-page [usr/bin/cpackexample]
+W: cpackexample: undeclared-elf-prerequisites (libboost_filesystem.so.1.83.0 libc.so.6 libdeal.ii.g.so.9.5.1 libgcc_s.so.1 libm.so.6 libmpi.so.40 libmpi_cxx.so.40 libstdc++.so.6 libtbb.so.12 libyaml-cpp.so.0.6) [usr/bin/cpackexample]
