@@ -31,11 +31,11 @@ set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "SSE cpackexample project using CMake, CPac
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER ${CPACK_PACKAGE_MAINTAINERS})
 # fix "no-copyright-file" warning
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/copyright"
-    DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/doc/${CPACK_PACKAGE_NAME}"
+    DESTINATION "${CMAKE_INSTALL_DOCDIR}"
     )
 # fix "no-changelog" warning
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/changelog.gz"
-    DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/doc/${CPACK_PACKAGE_NAME}"
+    DESTINATION "${CMAKE_INSTALL_DOCDIR}"
     )
 # fix "lacks-ldconfig-trigger" warning - thanks to precice!
 set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/cmake/debian/triggers")

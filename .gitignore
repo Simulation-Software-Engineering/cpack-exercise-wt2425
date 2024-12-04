@@ -1,3 +1,4 @@
 build/*
 output/*.tar.gz
 output/*.deb
+output/**/*
