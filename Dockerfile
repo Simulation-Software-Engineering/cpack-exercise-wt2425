@@ -1,4 +1,4 @@
-From ubuntu:24.04
+FROM ubuntu:24.04
 
 # Install a few dependencies
 RUN apt-get -qq update && \
@@ -12,7 +12,8 @@ RUN apt-get -qq update && \
         vim \
         tree \
         lintian \
-        unzip
+        unzip \
+        libyaml-cpp-dev
         
 # Get, unpack, build, and install yaml-cpp        
 RUN mkdir software && cd software && \
