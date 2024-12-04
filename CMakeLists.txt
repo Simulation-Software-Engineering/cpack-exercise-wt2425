@@ -20,3 +20,48 @@ target_link_libraries(cpackexamplelib Boost::filesystem ${YAML_CPP_LIBRARIES})
 
 DEAL_II_SETUP_TARGET("${PROJECT_NAME}")
 DEAL_II_SETUP_TARGET(cpackexamplelib)
+
+target_include_directories(cpackexamplelib PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<INSTALL_INTERFACE:include/cpackexamplelib>
+)
+
+# Install the executable in <prefix>/bin
+install(TARGETS "${PROJECT_NAME}"
+  RUNTIME DESTINATION bin
+)
+
+# Install the library in <prefix>/lib
+install(TARGETS cpackexamplelib
+  ARCHIVE DESTINATION lib           # For static libraries
+  LIBRARY DESTINATION lib           # For 	shared libraries
+)
+
+# Install the headers in <prefix>/include/cpackexamplelib
+install(FILES fem/fem.hpp filesystem/filesystem.hpp flatset/flatset.hpp yamlParser/yamlParser.hpp
+  DESTINATION include/cpackexamplelib
+)
+
+# copyright
+install(FILES ${CMAKE_SOURCE_DIR}/copyright
+    DESTINATION share/doc/cpackexample)
+
+# add changelog
+install(FILES ${CMAKE_SOURCE_DIR}/changelog.Debian.gz
+    DESTINATION share/doc/cpackexample)
+
+# manual page
+install(FILES ${CMAKE_SOURCE_DIR}/cpackexample.1.gz
+    DESTINATION share/man/man1)
+
+# Add the CMake module path
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+
+# Include the custom CPack configuration
+include(CPackConfig)
+
+add_custom_target(package_and_cleanup
+    COMMAND ${CMAKE_COMMAND} --build . --target package
+    COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/install_manifest.txt
+    COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/_CPack_Packages
+)
