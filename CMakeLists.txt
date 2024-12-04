@@ -33,6 +33,7 @@ install(TARGETS cpackexamplelib ${PROJECT_NAME}
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpackexamplelib
 )
 
+# Install the header files
 install(FILES filesystem/filesystem.hpp fem/fem.hpp flatset/flatset.hpp yamlParser/yamlParser.hpp
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpackexamplelib)
 
