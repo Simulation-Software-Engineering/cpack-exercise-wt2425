@@ -12,7 +12,12 @@ RUN apt-get -qq update && \
         vim \
         tree \
         lintian \
-        unzip
+        unzip \
+        locales
+
+# Set the locale
+RUN locale-gen en_US.UTF-8 && \
+    update-locale LANG=en_US.UTF-8
         
 # Get, unpack, build, and install yaml-cpp        
 RUN mkdir software && cd software && \
