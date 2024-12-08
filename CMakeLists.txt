@@ -30,6 +30,11 @@ target_link_libraries(cpackexamplelib Boost::filesystem ${YAML_CPP_LIBRARIES})
 DEAL_II_SETUP_TARGET("${PROJECT_NAME}")
 DEAL_II_SETUP_TARGET(cpackexamplelib)
 
+install(FILES ${CMAKE_SOURCE_DIR}/copyright
+  DESTINATION "/usr/share/doc/${PROJECT_NAME}/"
+  COMPONENT Documentation
+)
+
 include(GNUInstallDirs)
 install(TARGETS "${PROJECT_NAME}" cpackexamplelib
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
