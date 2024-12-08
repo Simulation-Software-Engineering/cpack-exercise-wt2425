@@ -42,5 +42,5 @@ RUN make -j
 RUN make install 
 RUN make package
 
-WORKDIR /root/cpack-exercise/installation
+WORKDIR /root/cpack-exercise/build
 CMD ["/bin/bash"]

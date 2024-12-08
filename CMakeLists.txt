@@ -38,6 +38,18 @@ install(TARGETS cpackexample cpackexamplelib
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpackexamplelib
 )
 
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cpackexample.1.gz
+    DESTINATION share/man/man1
+)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/changelog.gz
+    DESTINATION share/doc/libcpackexamplelib
+)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/copyright
+    DESTINATION share/doc/libcpackexamplelib
+)
+
 # Adding other cmake modules 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 

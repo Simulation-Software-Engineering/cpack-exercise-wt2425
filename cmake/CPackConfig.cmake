@@ -9,14 +9,17 @@ set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "This is just a Debian package made for an 
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Muhammad Gema Akbar <mgemaakbar@gmail.com>")
 set(CPACK_PACKAGE_MAINTAINERS "SSE student ${CPACK_PACKAGE_CONTACT}")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/mgemaakbar/cpack-exercise-wt2425")
+set(CPACK_DEBIAN_PACKAGE_NAME "libcpackexamplelib")
 set(CPACK_GENERATOR "TGZ;DEB")
 
 # Debian packaging section
 set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS YES)
 
-# strip really all Debug symbols
 set(CPACK_STRIP_FILES TRUE)
+
+set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/triggers")
+set(CPACK_DEBIAN_PACKAGE_CONTROL_STRICT_PERMISSION TRUE)
 
 include(CPack)
 
