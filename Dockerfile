@@ -32,7 +32,7 @@ RUN cd cpack-exercise
 COPY . /root/cpack-exercise
 RUN mkdir installation
 
-# make sure we start clean; 
+# make sure we start clean; remove the existing build folder that may exist
 RUN rm -rf /root/cpack-exercise/build 
 RUN mkdir build
 

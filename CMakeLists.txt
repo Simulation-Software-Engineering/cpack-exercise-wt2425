@@ -38,9 +38,9 @@ install(TARGETS cpackexample cpackexamplelib
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpackexamplelib
 )
 
-# Adding other cmake modules (standard like this)
+# Adding other cmake modules 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-# Include our packaging module (standard like this)
 
+# Include our packaging module (cmake/CPackConfig.cmake)
 include(CPackConfig)
 
