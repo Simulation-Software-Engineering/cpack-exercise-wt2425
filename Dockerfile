@@ -12,7 +12,8 @@ RUN apt-get -qq update && \
         vim \
         tree \
         lintian \
-        unzip
+        unzip \
+        libyaml-cpp-dev
         
 # Get, unpack, build, and install yaml-cpp        
 RUN mkdir software && cd software && \
@@ -26,3 +27,4 @@ ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/local/lib/
 ENV PATH $PATH:/usr/local/bin/
 
 CMD ["/bin/bash"]
+
