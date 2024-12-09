@@ -85,6 +85,40 @@ install(FILES ${CMAKE_SOURCE_DIR}/copyright DESTINATION share/doc/cpackexample)
 install(FILES ${CMAKE_SOURCE_DIR}/changelog.Debian.gz DESTINATION share/doc/cpackexample)
 install(FILES ${CMAKE_SOURCE_DIR}/cpackexample.1.gz DESTINATION share/man/man1)
 
+# Strip binaries during installation
+set(CMAKE_INSTALL_DO_STRIP TRUE)
+
+# Exclude unwanted files and directories
+set(CPACK_SOURCE_IGNORE_FILES
+    "/build/"
+    "/cmake/"
+    "/fem/"
+    "/flatset/"
+    "/yamlParser/"
+    "/filesystem/"
+    "/CMakeFiles/"
+    "/CMakeCache.txt"
+    "/cmake_install.cmake"
+    "/install_manifest.txt"
+    "~$"
+    "\\.git/"
+    "\\.gitignore"
+    "\\.DS_Store"
+    "Dockerfile"
+    "\\.swp$"
+    "README.md"
+    "LICENSE"
+)
+
+# Fix permissions for directories and files
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/flatset DESTINATION include/cpackexamplelib
+        FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
+
+# Disable RPATH or RUNPATH
+set(CMAKE_SKIP_RPATH TRUE)
+set(CMAKE_INSTALL_RPATH "")
+set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+
 # CPack configuration
 include(CPack)
 
@@ -108,22 +142,9 @@ set(CPACK_STRIP_FILES TRUE)
 # Ensure DEB generation is explicitly set
 set(CPACK_GENERATOR "TGZ;DEB")
 
-# Exclude unnecessary files
-set(CPACK_SOURCE_IGNORE_FILES
-    "/build/;/.git/;/.gitignore;~$;/CMakeFiles/;/CMakeCache.txt;/cmake_install.cmake;/Makefile;/install_manifest.txt"
-)
-
-# Ensure only the install directory is packaged
-set(CPACK_INSTALL_CMAKE_PROJECTS
-    "${CMAKE_BINARY_DIR};${CMAKE_PROJECT_NAME};ALL;/"
-)
+# Specify output file prefix and package name
 set(CPACK_OUTPUT_FILE_PREFIX "${CMAKE_BINARY_DIR}/packages")
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CMAKE_SYSTEM_PROCESSOR}")
-
-# Disable RPATH or RUNPATH
-set(CMAKE_SKIP_RPATH TRUE)
-set(CMAKE_INSTALL_RPATH "")
-set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
 
 # Include CPack to finalize settings
 include(CPack)
