@@ -25,4 +25,6 @@ ENV LIBRARY_PATH $LIBRARY_PATH:/usr/local/lib/
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/local/lib/
 ENV PATH $PATH:/usr/local/bin/
 
+WORKDIR /mnt/cpack-exercise
+
 CMD ["/bin/bash"]
