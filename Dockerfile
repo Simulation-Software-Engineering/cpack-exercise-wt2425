@@ -32,6 +32,9 @@ RUN cd cpack-exercise
 COPY . /root/cpack-exercise
 RUN mkdir installation
 
+WORKDIR /root/cpack-exercise
+RUN chmod +x copytardeb.sh
+
 # make sure we start clean; remove the existing build folder that may exist
 RUN rm -rf /root/cpack-exercise/build 
 RUN mkdir build
@@ -42,5 +45,6 @@ RUN make -j
 RUN make install 
 RUN make package
 
-WORKDIR /root/cpack-exercise/build
-CMD ["/bin/bash"]
+WORKDIR /root/cpack-exercise
+
+CMD ["./copytardeb.sh"]
