@@ -1,0 +1,5 @@
+cpackexample (0.1.0-1) stable; urgency=medium
+
+  * Initial release. (Closes: #0001) <0001 was a bug>
+
+ -- Vedant Puranik <st189464@stud.uni-stuttgart.de>  Sun, 08 Dec 2024 07:44:00 +0100

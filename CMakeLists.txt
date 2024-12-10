@@ -20,3 +20,36 @@ target_link_libraries(cpackexamplelib Boost::filesystem ${YAML_CPP_LIBRARIES})
 
 DEAL_II_SETUP_TARGET("${PROJECT_NAME}")
 DEAL_II_SETUP_TARGET(cpackexamplelib)
+
+# Define the installation prefix
+set(CPACKEXAMPLE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
+
+# Install the library to <prefix>/lib/
+install(TARGETS cpackexamplelib
+        EXPORT cpackexamplelib-targets
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
+
+# Install the executable to <prefix>/bin/
+install(TARGETS ${PROJECT_NAME}
+        RUNTIME DESTINATION bin)
+
+# Install the header files to <prefix>/include/cpackexamplelib/
+install(FILES fem/fem.hpp
+              filesystem/filesystem.hpp
+              flatset/flatset.hpp
+              yamlParser/yamlParser.hpp
+        DESTINATION include/cpackexamplelib)
+
+# Changelog file
+install(FILES ${CMAKE_SOURCE_DIR}/cmake/changelog.gz
+        DESTINATION share/doc/cpackexample)
+
+# copyright
+install(FILES ${CMAKE_SOURCE_DIR}/copyright
+        DESTINATION share/doc/${PROJECT_NAME})
+
+# Ensures compiled code is stripped
+set(CMAKE_INSTALL_DO_STRIP TRUE)
+
+include(cmake/CPackConfig.cmake)
