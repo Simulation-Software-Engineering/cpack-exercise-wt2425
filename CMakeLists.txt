@@ -49,7 +49,4 @@ install(FILES ${CMAKE_SOURCE_DIR}/cmake/changelog.gz
 install(FILES ${CMAKE_SOURCE_DIR}/copyright
         DESTINATION share/doc/${PROJECT_NAME})
 
-# Ensures compiled code is stripped
-set(CMAKE_INSTALL_DO_STRIP TRUE)
-
 include(cmake/CPackConfig.cmake)
