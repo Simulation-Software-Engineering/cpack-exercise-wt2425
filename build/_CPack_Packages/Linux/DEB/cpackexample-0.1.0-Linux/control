@@ -1,0 +1,12 @@
+Architecture: arm64
+Depends: libboost-filesystem1.83.0 (>= 1.83.0), libc6 (>= 2.34), libdeal.ii-9.5.1 (>= 9.5.1), libgcc-s1 (>= 3.0), libopenmpi3t64 (>= 4.1.6), libstdc++6 (>= 13.1), libtbb12 (>= 2021.11.0)
+Description: SSE CPack-Exercise project
+ This is an SSE CPack example Project indicating how to package CMake and CPack code.
+Homepage: https://github.com/niyati-n/cpack-exercise-wt2425
+Maintainer: st191812@stud.uni-stuttgart.de
+Package: cpackexample
+Priority: optional
+Section: devel
+Version: 0.1.0
+Installed-Size: 7426
+

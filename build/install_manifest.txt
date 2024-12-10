@@ -1,0 +1,4 @@
+/usr/bin/cpackexample
+/usr/lib/libcpackexamplelib.so
+/usr/include/cpackexample/yamlParser.hpp
+/usr/share/doc/cpackexample/copyright
