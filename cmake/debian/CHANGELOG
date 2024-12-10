@@ -1,0 +1,8 @@
+cpackexample (0.1.0) unstable; urgency=low
+
+  * Initial release of cpackexample.
+  * Added basic functionality for parsing YAML files.
+  * Included Boost filesystem support.
+  * Integrated with deal.II library.
+
+ -- Marcel Wolkober <st163937@stud.uni-stuttgart.de>  Wed, 04 Dec 2024 16:22:15 +0000

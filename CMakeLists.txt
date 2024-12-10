@@ -12,7 +12,7 @@ find_package(Boost 1.83 COMPONENTS filesystem REQUIRED)
 
 find_package(yaml-cpp 0.6 REQUIRED)
 
-add_library(cpackexamplelib filesystem/filesystem.cpp fem/fem.cpp flatset/flatset.cpp yamlParser/yamlParser.cpp)
+add_library(cpackexamplelib SHARED filesystem/filesystem.cpp fem/fem.cpp flatset/flatset.cpp yamlParser/yamlParser.cpp)
 add_executable("${PROJECT_NAME}" main.cpp)
 
 target_link_libraries("${PROJECT_NAME}" cpackexamplelib)
