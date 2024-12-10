@@ -57,6 +57,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
         COMMENT "Stripping binary for Release configuration"
     )
 endif()
+
 set(COPYRIGHT_FILE ${CMAKE_SOURCE_DIR}/copyright)
 install(FILES ${COPYRIGHT_FILE} DESTINATION "/usr/share/doc/${PROJECT_NAME}")
 
