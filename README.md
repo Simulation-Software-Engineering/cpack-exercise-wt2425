@@ -1,3 +1,8 @@
 # Packaging with CPack
 
-Repository for the [CPack exercise](https://github.com/Simulation-Software-Engineering/Lecture-Material/blob/main/03_building_and_packaging/cpack_exercise.md). The code is a slightly modified version of the [code used in the CMake exercise](https://github.com/Simulation-Software-Engineering/cmake-exercise-wt2425).
+## Setup and package generation
+
+- Pull the repository.
+- In the root directory run ``docker build -t cpack-exercise-wolkobml .``
+- To build the packages run ``docker run --rm -v "$(pwd)/output:/cpack-exercise/output" cpack-exercise-wolkobml``
+- The generated  ``.deb`` and ``.tar.hz`` files should be in the folder "output".
