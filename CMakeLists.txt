@@ -20,3 +20,17 @@ target_link_libraries(cpackexamplelib Boost::filesystem ${YAML_CPP_LIBRARIES})
 
 DEAL_II_SETUP_TARGET("${PROJECT_NAME}")
 DEAL_II_SETUP_TARGET(cpackexamplelib)
+
+include(GNUInstallDirs)
+
+install(TARGETS cpackexamplelib
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpackexamplelib
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+
+install(DIRECTORY fem/ filesystem/ flatset/ yamlParser/
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cpackexamplelib
+        FILES_MATCHING PATTERN "*.hpp")
+
+include(cmake/CPackConfig.cmake)

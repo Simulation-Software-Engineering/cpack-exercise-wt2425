@@ -1,0 +1,13 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://github.com/SchitingLuo/cpack-exercise-wt2425.git
+Upstream-Name: cpack-exercise-wt2425
+
+Files:
+ *
+Copyright: 2024 SchitingLuo <schiitngluo@gmail.com>
+License: MIT
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
