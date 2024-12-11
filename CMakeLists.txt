@@ -20,3 +20,9 @@ target_link_libraries(cpackexamplelib Boost::filesystem ${YAML_CPP_LIBRARIES})
 
 DEAL_II_SETUP_TARGET("${PROJECT_NAME}")
 DEAL_II_SETUP_TARGET(cpackexamplelib)
+
+install(TARGETS cpackexamplelib DESTINATION lib) 
+install(TARGETS ${PROJECT_NAME} DESTINATION bin) 
+install(FILES fem/fem.hpp filesystem/filesystem.hpp flatset/flatset.hpp yamlParser/yamlParser.hpp DESTINATION include/cpackexamplelib)
+
+include(cmake/CPackConfig.cmake)
