@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cpackexample
+Source: https://github.com/YonatanGM/cpack-exercise-wt2425
+
+Files: *
+Copyright: 2024 Yonatan Mamo
+License: MIT
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the MIT License.
+ .
+ The full license text can be found at:
+ https://opensource.org/licenses/MIT

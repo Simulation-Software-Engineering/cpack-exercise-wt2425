@@ -1,0 +1,5 @@
+cpackexample (0.1.0) unstable; urgency=low
+
+  * Initial release of the CPack example project.
+
+ -- Yonatan Mamo <girmayonatan86@gmail.com>  Wed, 11 Dec 2024 07:04:42 +0000
